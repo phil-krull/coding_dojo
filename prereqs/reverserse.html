@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Reversing</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function reverse(arr) {
+      var swap = arr.length-1;
+      for(var idx = 0; idx < Math.floor(arr.length/2); idx++) {
+        var temp = arr[idx];
+        arr[idx] = arr[swap];
+        arr[swap] = temp;
+        swap--;
+      }
+      console.log(arr);
+    }
+  </script>
+</body>
+</html>

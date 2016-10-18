@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>rFactorial</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function rFactorial(num) {
+      if(num == 0) {return -1};
+      if(num == 1) {
+        return num;
+      } else {
+        var factorial = num * rFactorial(num - 1);
+      }
+      return factorial;
+    }
+  </script>
+</body>
+</html>

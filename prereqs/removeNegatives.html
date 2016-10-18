@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Remove Negatives</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function removeNeg(arr) {
+      for(var idx = 0; idx < arr.length; idx++) {
+        if(arr[idx] < 0) {
+          for(var jdx = idx; jdx < arr.length; jdx++) {
+            arr[jdx] = arr[jdx+1];
+          }
+            arr.pop();
+        }
+      }
+      console.log(arr);
+    }
+    function removeNegatives(arr) {
+      var numNegatives = 0;
+      for(var idx = 0; idx < arr.length; idx++) {
+        if (arr[idx] < 0) {
+          numNegatives++;
+        } else {
+          arr[idx - numNegatives] = arr[idx];
+        }
+      }
+      while (numNegatives--) {
+        arr.pop();
+      }
+      return arr;
+    }
+  </script>
+</body>
+</html>

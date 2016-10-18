@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Quick Sort</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function quickSort(arr, start, end) {
+      start = start || 0;
+      end = end || arr.length;
+
+      if(end-start <= 1) {return;}
+      var mid = partition(arr, start, end);
+      quickSort(arr, start, mid);
+      quickSort(arr, mid + 1, end);
+      console.log(arr);
+      return arr;
+    }
+    function partition(arr, start, end) {
+      start = start || 0;
+      end = end || arr.length;
+      var pivotIdx = pickPivot(arr, start, end);
+      var pivot = arr[pivotIdx];
+      arr[pivotIdx] = arr[start];
+      var lastLowIdx = start;
+      for(var idx = start + 1; idx < end; idx++) {
+        if(arr[idx] < pivot) {
+          var temp = arr[idx];
+          arr[idx] = arr[++lastLowIdx]
+          arr[lastLowIdx] = temp;
+        }
+      }
+      arr[start] = arr[lastLowIdx];
+      arr[lastLowIdx] = pivot;
+      console.log("lastLowIdx", lastLowIdx)
+      return lastLowIdx;
+    }
+    function pickPivot(arr, start, end) {
+      var a = arr[start], c = arr[end - 1];
+      var bi = Math.floor((start+end)/2), b = arr[bi];
+      return (((a-b)*(b-c) >= 0) ? bi : (((a-c)*(c-b) >= 0) ? end - 1 : start));
+    }
+  </script>
+</body>
+</html>

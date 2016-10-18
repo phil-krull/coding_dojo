@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Selection Sort</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function selectionSort(arr) {
+      for(var idx = 0; idx < arr.length; idx++) {
+        var min = idx;
+        for(var jdx = idx+1; jdx < arr.length; jdx++) {
+          if(arr[min] > arr[jdx]) {
+            min = jdx;
+          }
+        }
+        if(min != idx) {
+          var temp = arr[idx];
+          arr[idx] = arr[min];
+          arr[min] = temp;
+        }
+      }
+      return arr;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Random Array</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function randomArr(min, max) {
+      var newArr = [];
+      for(var idx = 0; idx < 10; idx++) {
+        newArr.push(Math.floor(Math.random() * (max-min+1)+min));
+      }
+      console.log(newArr);
+    }
+  </script>
+</body>
+</html>

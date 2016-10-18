@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>iFibonacci</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function iFib(num) {
+      if(num == 0) {return 0};
+      if(num <= 2) {return 1};
+      var arr = [0,1,1]
+      for (var idx = 3; idx <= num; idx++) {
+        arr[idx] = arr[idx - 1] + arr[idx - 2];
+      }
+      return arr;
+    }
+  </script>
+</body>
+</html>

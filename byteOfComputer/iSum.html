@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>iSum</title>
+</head>
+<body>
+  <script>
+
+    function iSum(num) {
+      var sum = 0;
+      for (var idx = 1; idx <= num; idx++) {
+        sum += idx;
+      }
+      return sum;
+    }
+
+    function rSum(num) {
+      if(num == 1) {
+        return 1;
+      } else {
+        return num + rSum(num - 1);
+      }
+    }
+
+  </script>
+</body>
+</html>

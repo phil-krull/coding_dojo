@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Shifting the values in the array</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function shift(arr) {
+      for(var idx = 0; idx < arr.length - 1; idx++) {
+        arr[idx] = arr[idx + 1];
+      }
+      arr[arr.length - 1] = 0;
+      console.log(arr);
+    }
+  </script>
+</body>
+</html>

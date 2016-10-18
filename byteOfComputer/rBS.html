@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>rBS</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function rBS(arr, num, max, min) {
+      if(min == undefined) {
+        max = arr.length - 1;
+        min = 0;
+      }
+      if (max < min) {
+        return -1;
+      } else {
+        var mid = Math.floor((max + min)/2);
+        if(arr[mid] > num) {
+          rBS(arr, num, mid - 1, min);
+        }
+        else if(arr[mid] < num) {
+          rBS(arr, num, max, mid + 1);
+        }
+        else {
+          console.log(mid);
+          return mid;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

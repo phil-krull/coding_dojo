@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>iFactorial</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+    function iFactorial(num) {
+      var factorial = undefined;
+      for (var idx = num; idx > 0; idx--) {
+        if(factorial == undefined) {
+          factorial = num;
+          continue;
+        } else {
+          factorial = factorial * idx;
+        }
+      }
+      return factorial;
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript">
+    function rotateArr(arr, shiftBy){
+      if(shiftBy < 0){
+        shiftBy = arr.length + shiftBy;
+      }
+      while(shiftBy){
+        var temp = arr[arr.length - 1];
+        for(var i = arr.length - 1; i > 0; i--){
+          arr[i] = arr[i - 1];
+        }
+        arr[i] = temp;
+        shiftBy--;
+      }
+      console.log(arr);
+    }
+    function filterRange(arr,min,max){
+      var final = 0;
+      for (i=0;i<arr.length;i++){
+        if(arr[i]<min || arr[i]>max){
+          arr[final++] = arr[i];
+        }
+       }
+      arr.length = final;
+      return arr;
+    }
+    function oddArray(){
+      var arr = [];
+      for(var i = 1; i < 255; i += 2){
+        arr.push(i);
+      }
+      console.log(arr);
+    }
+    function moveForward(){
+      var arr = [1, 3, 5];
+      for (i = 1; i < arr.length; i++){
+        arr[i - 1] = arr[i];
+      }
+      arr.push(0);
+      console.log(arr);
+    }
+
+
+ //Test the function
+ // var arr = [2,4,6,8,10,12,14,16,18,20];
+ // var min = 8;
+ // var max = 17
+  </script>
+</head>
+<body>
+
+</body>
+</html>

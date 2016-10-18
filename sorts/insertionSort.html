@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Insertion Sort</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function insertionSort(arr) {
+      for(idx = 1; idx < arr.length; idx++) {
+      var temp = arr[idx];
+      var jdx = idx;
+      while(jdx > 0 && temp <= arr[jdx-1]) {
+            arr[jdx] = arr[jdx-1];
+            jdx--;
+          }
+        arr[jdx] = temp;
+      }
+      return arr;
+    }
+  </script>
+</body>
+</html>

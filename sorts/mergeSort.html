@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Merge Sort</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function sortArrays(arr1, arr2) {
+      var arr1idx = 0;
+      var arr2idx = 0;
+      var newArr = [];
+      while(arr1idx < arr1.length || arr2idx < arr2.length) {
+        if(arr1[arr1idx] < arr2[arr2idx] || arr2idx == arr2.length) {
+          newArr.push(arr1[arr1idx]);
+          arr1idx++;
+        }
+        else if(arr1[arr1idx] > arr2[arr2idx] || arr1idx == arr1.length) {
+          newArr.push(arr2[arr2idx]);
+          arr2idx++;
+        }
+      }
+      return newArr;
+      console.log("sortArray", newArr);
+    }
+    function mergeSort(arr) {
+      if(arr.length == 1){return arr}
+        else {
+          var frontArr = [];
+          var backArr = [];
+            for(var idx = 0; idx < Math.floor(arr.length/2); idx++) {
+              frontArr.push(arr[idx]);
+            }
+            for(var idx = Math.floor(arr.length/2); idx < arr.length; idx++) {
+              backArr.push(arr[idx]);
+            }
+          return sortArrays(mergeSort(frontArr), mergeSort(backArr));
+        }
+    }
+  </script>
+</body>
+</html>
