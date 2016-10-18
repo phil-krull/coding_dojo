@@ -1,0 +1,97 @@
+<html>
+<head>
+  <title>Singly Linked List</title>
+  <script type="text/javascript">
+
+    function slNode(val){
+      this.val = val;
+      this.next = null;
+    }
+
+    function sList(){
+      this.head = null;
+
+      this.addFront = function(val){
+        var oldHead = this.head;
+        this.head = new slNode(val);
+        this.head.next = oldHead;
+      }
+
+      this.addBack = function(val){
+        var newNode = new slNode(val);
+        if(!this.head){
+          this.head = newNode;
+        } else{
+          var curr = this.head;
+          while(curr.next){
+            curr = curr.next;
+          }
+          curr.next = newNode;
+        }
+      }
+
+      this.RemoveFront = function(){
+        if(!this.head){return -1}
+        var newHead = this.head.next;
+        this.head.next = null;
+        this.head = newHead;
+      }
+
+      this.RemoveBack = function(){
+        if(!this.head){return -1}
+          var curr = this.head;
+        while(curr.next.next){
+          curr = curr.next;
+        }
+        curr.next = null;
+      }
+
+      this.Front = function(){
+        if(!this.head){return -1}
+        return this.head.val;
+      }
+
+      this.Back = function(){
+        if(!this.head){return -1}
+          var curr = this.head;
+        while(curr.next){
+          curr = curr.next;
+        }
+        return curr.val;
+      }
+
+      this.isEmpty = function(){
+        return (this.head === null);
+      }
+
+      this.count = function(){
+        if(!this.head){return 0}
+        var count = 0;
+        var curr = this.head;
+        while(curr){
+          curr = curr.next;
+          count++;
+        }
+        return count;
+      }
+
+      this.contains = function(val){
+        if(!this.head){return -1}
+        var curr = this.head;
+        while(curr){
+          if(curr.val === val){
+            return true;
+          } else {
+            curr = curr.next;
+          }
+        }
+        return -1;
+      }
+
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

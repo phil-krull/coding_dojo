@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Sorting Algorithms</title>
+  <script type="text/javascript">
+
+    function bubbleSort(arr){
+      for(var idx = arr.length; idx > 0; idx--){
+        var swapped = false;
+        for(var jdx = 0; jdx < idx; jdx++){
+          if(arr[jdx] > arr[jdx+1]){
+            var swap = arr[jdx];
+            arr[jdx] = arr[jdx+1];
+            arr[jdx+1] = swap;
+            swapped = true;
+          }
+        }
+        if(swapped == false){break;}
+      }
+      return arr;
+    }
+
+    function selectionSort(arr){
+      for(var idx = 0; idx < arr.length; idx++){
+        var minIdx = idx;
+        for(var jdx = idx+1; jdx < arr.length; jdx++){
+          if(arr[jdx] < arr[minIdx]){
+            minIdx = jdx;
+          }
+        }
+        if(minIdx != idx){
+          var swapp = arr[idx];
+          arr[idx] = arr[minIdx];
+          arr[minIdx] = swapp;
+        }
+      }
+      return arr;
+    }
+    function insertionSort(arr){
+      for(var idx = 1; idx < arr.length; idx++){
+        var swapped = false;
+        var swap = arr[idx];
+        for(var jdx = idx - 1; jdx >= 0; jdx--){
+          if(swap < arr[jdx]){
+            arr[jdx+1] = arr[jdx];
+            swapped = true;
+          } else {
+            break;
+          }
+        }
+        if(swapped == true){arr[jdx+1] = swap}
+      }
+      return arr;
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

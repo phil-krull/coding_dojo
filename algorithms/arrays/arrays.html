@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Array Algorithms</title>
+  <script type="text/javascript">
+
+    function SwapPairs(arr){
+      for(var idx = 0; idx < arr.length-1; idx = idx + 2){
+        var temp = arr[idx];
+        arr[idx] = arr[idx + 1];
+        arr[idx + 1] = temp;
+      }
+      return arr;
+    }
+
+    function ReverseArr(arr){
+      for(var idx = 0; idx < arr.length/2; idx++){
+        var temp = arr[idx];
+        console.log(arr.length - 1 - idx);
+        arr[idx] = arr[arr.length - 1 - idx];
+        arr[arr.length - idx - 1] = temp;
+      }
+      return arr;
+    }
+
+    function RemoveNegs(arr){
+      var negCount = 0;
+      for(var idx = 0; idx < arr.length; idx++){
+        if(arr[idx] < 0){
+          negCount++;
+        } else {
+          arr[idx - negCount] = arr[idx];
+        }
+      }
+      while(negCount--){
+        arr.pop();
+      }
+      return arr;
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

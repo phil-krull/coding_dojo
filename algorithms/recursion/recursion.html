@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Recursion</title>
+  <script type="text/javascript">
+
+    function rFib(num){
+      if(num < 1){return 0}
+      if(num < 2){return 1}
+      return rFib(num - 1) + rFib(num - 2);
+    }
+
+    function rFact(num){
+      if(num < 1){return 0}
+      if(num < 2){return 1}
+      return (num) * rFact(num - 1);
+    }
+
+    function sumOfSquares(num){
+      if(num < 1){return 0}
+      if(num < 2){return 1}
+      return (num*num)+(sumOfSquares(num-1));
+    }
+
+    function bstSize(bst){
+      if(bst === null){return 0}
+      return bstSize(bst.left) + bstSize(bst.right) + 1;
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

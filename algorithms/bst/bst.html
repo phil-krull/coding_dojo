@@ -1,0 +1,76 @@
+<html>
+<head>
+  <title>Binary Search Trees</title>
+  <script type="text/javascript">
+
+    function bstNode(val){
+      this.val = val;
+      this.left = null;
+      this.right = null;
+    }
+
+    function bst(){
+      this.root = null;
+
+      this.add = function(val){
+        var newNode = new bstNode(val);
+        if(!this.root){
+          this.root = newNode;
+          return;
+        }
+        var runner = this.root;
+        while(runner){
+          if(runner.val < val){
+            if(runner.right == null){
+              runner.right = newNode;
+              return;
+            }
+            runner = runner.right;
+          }
+          if(runner.left == null){
+            runner.left = newNode;
+            return;
+          }
+          runner = runner.left;
+        }
+      }
+
+      this.isEmpty = function(){
+        return(this.root === null);
+      }
+
+      this.contains = function(val){
+        var runner = this.root;
+        while(runner){
+          if(runner.val === val){return true;}
+          if(runner.val < val){runner = runner.right;}
+          runner = runner.left;
+        }
+        return false;
+      }
+
+      this.min = function(){
+        if(!this.root){return -1};
+        var runner = this.root;
+        while(runner.left){
+          runner = runner.left;
+        }
+        return runner.val;
+      }
+
+      this.max = function(){
+        if(!this.root){return -1};
+        var runner = this.root;
+        while(runner.right){
+          runner = runner.right;
+        }
+        return runner.val;
+      }
+
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
